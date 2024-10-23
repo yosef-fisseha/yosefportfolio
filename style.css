@@ -83,6 +83,10 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+nav .fas {
+    display: none;
+}
+
 .header-text {
     margin-top: 20%;
     font-size: 30px;
@@ -392,6 +396,10 @@ nav ul li a:hover::after {
 }
 
 /* ----------contact---------- */
+#contact {
+    padding: 50px 0;
+}
+
 .contact-left {
     flex-basis: 35%;
 }
@@ -562,6 +570,7 @@ form .btn2 {
     }
 
     .tab-links {
+        
         font-size: 16px;
         margin-right: 20px;
     }
@@ -616,5 +625,62 @@ form .btn2 {
         height: 40px;
         font-size: 20px;
         line-height: 40px;
+    }
+}
+
+/* Styles for wider screens */
+@media only screen and (min-width: 769px) {
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .contact-left, .contact-right {
+        flex-basis: 48%;
+    }
+
+    .social-icons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .social-icons a {
+        margin-bottom: 10px;
+    }
+
+    .btn.btn2 {
+        display: inline-block;
+        margin-top: 20px;
+    }
+
+    nav ul {
+        position: static;
+        display: flex;
+        background: none;
+        height: auto;
+        width: auto;
+        padding-top: 0;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 10px 20px;
+    }
+
+    nav .fas {
+        display: none;
+    }
+}
+
+/* Extra wide screen adjustments */
+@media only screen and (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
     }
 }
