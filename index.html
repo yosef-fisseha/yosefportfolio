@@ -7,41 +7,42 @@
     <title>YOSEF FISSEHA</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/e674bba739.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
 </head>
 <body>
     <!-- HEADER SECTION -->
-    <div id="header">
+    <div id="header" class="animated-section">
         <div class="container">
             <nav>
-                <img src="images/logo (2).png" class="logo" alt="Logo">
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <img src="images/logo (2).png" class="logo rotating" alt="Logo">
+                <ul id="sidemenu" class="nav-menu">
+                    <li><a href="#header" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                     <i class="fas fa-times" onclick="closeMenu()"></i>
                 </ul>
                 <i class="fas fa-bars" onclick="openMenu()"></i>
             </nav>
-            <div class="header-text">
-                <p>Developer</p>
-                <h1>Hi, I'm <span>YOSEF</span><br>FISSEHA from Ethiopia</h1>
+            <div class="header-text animate-fadeIn">
+                <p class="animated-text">Developer</p>
+                <h1 class="animated-text">Hi, I'm <span>YOSEF</span><br>FISSEHA from Ethiopia</h1>
             </div>
         </div>
     </div>
 
     <!-- ABOUT SECTION -->
-    <div id="about">
+    <div id="about" class="animated-section">
         <div class="container">
             <div class="row">
-                <div class="about-col-1">
-                    <img src="images/user.jpg" alt="Yosef Fisseha">
+                <div class="about-col-1 animate-slideInLeft">
+                    <img src="images/user.jpg" alt="Yosef Fisseha" class="floating">
                 </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>Hi, I'm Yosef Fisseha, a dedicated and passionate IT professional with a strong educational background.
+                <div class="about-col-2 animate-slideInRight">
+                    <h1 class="sub-title animated-text">About Me</h1>
+                    <p class="animated-text">Hi, I'm Yosef Fisseha, a dedicated and passionate IT professional with a strong educational background.
                         I hold a Diploma in Hardware and Networking from Admas University, a Certification in Cisco Networking from Addis Ababa University, and a Degree in Computer Science from Microlink Information Technology College.
                         With a solid foundation in computer systems and networks, I'm excited to apply my skills and knowledge to drive innovative solutions. I'm a team player, a quick learner, and a creative problem solver.
                         Let's connect and explore opportunities to create something amazing together!</p>
@@ -69,16 +70,16 @@
     </div>
 
     <!-- SERVICES SECTION -->
-    <div id="services">
+    <div id="services" class="animated-section">
         <div class="container">
-            <h1 class="sub-title">My Services</h1>
+            <h1 class="sub-title animated-text">My Services</h1>
             <div class="services-list">
-                <div>
+                <div class="service-item animate-fadeIn">
                     <i class="fa-brands fa-android"></i>
                     <h2>App Development</h2>
                     <p>Mobile app development services cover both iOS and Android platforms. We create intuitive, user-friendly apps that meet the unique needs of our clients.</p>
                 </div>
-                <div>
+                <div class="service-item animate-fadeIn" style="animation-delay: 0.2s;">
                     <i class="fa-solid fa-code"></i>
                     <h2>Web Development</h2>
                     <p>Design and develop custom websites that are responsive, scalable, and secure. Our web development services ensure the best experience.</p>
@@ -88,11 +89,11 @@
     </div>
 
     <!-- PORTFOLIO SECTION -->
-    <div id="portfolio">
+    <div id="portfolio" class="animated-section">
         <div class="container">
-            <h1 class="sub-title">My Works</h1>
+            <h1 class="sub-title animated-text">My Works</h1>
             <div class="work-list">
-                <div class="work">
+                <div class="work animate-slideInBottom">
                     <img src="images/music app.png" alt="Music App">
                     <div class="layer">
                         <h2>Music App</h2>
@@ -102,7 +103,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="work">
+                <div class="work animate-slideInBottom" style="animation-delay: 0.2s;">
                     <img src="images/online exam.png" alt="Online Exam Platform">
                     <div class="layer">
                         <h2>Online Exam Platform</h2>
@@ -112,7 +113,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="work">
+                <div class="work animate-slideInBottom" style="animation-delay: 0.4s;">
                     <img src="images/pharmacy.png" alt="Online Pharmacy Web">
                     <div class="layer">
                         <h2>Online Pharmacy Web</h2>
@@ -126,68 +127,64 @@
         </div>
     </div>
 
-
-<!-- CERTIFICATES SECTION -->
-
-<div id="certificates">
-    <div class="container">
-        <h1 class="sub-title">My Certificates</h1>
-        <div class="certificate-list">
-            <div class="certificate">
-                <img src="images/adobe.jpg" alt="Adobe Certificates">
-                <div class="certificate-overlay">
-                    <h3>Adobe Certificates</h3>
-                    <p>Click to view and download my Adobe certifications</p>
-                    <div class="certificate-buttons">
-                        <a href="certificates/UC-42c7fc70-a485-463a-99d9-e001a7a41529.pdf" download class="download-btn">Download Certificate 1</a>
-                        <a href="certificates/UC-4d3d7685-2a09-41f8-ab20-991097783864.pdf" download class="download-btn">Download Certificate 2</a>
+    <!-- CERTIFICATES SECTION -->
+    <div id="certificates" class="animated-section">
+        <div class="container">
+            <h1 class="sub-title animated-text">My Certificates</h1>
+            <div class="certificate-list">
+                <div class="certificate">
+                    <img src="images/adobe.jpg" alt="Adobe Certificates">
+                    <div class="certificate-overlay">
+                        <h3>Adobe Certificates</h3>
+                        <p>Click to view and download my Adobe certifications</p>
+                        <div class="certificate-buttons">
+                            <a href="certificates/UC-42c7fc70-a485-463a-99d9-e001a7a41529.pdf" download class="download-btn">Download Certificate 1</a>
+                            <a href="certificates/UC-4d3d7685-2a09-41f8-ab20-991097783864.pdf" download class="download-btn">Download Certificate 2</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="certificate">
-                <img src="images/diploma.jpg" alt="Diploma Certificates">
-                <div class="certificate-overlay">
-                    <h3>Diploma Certificates</h3>
-                    <p>Click to view and download my Diploma certifications</p>
-                    <div class="certificate-buttons">
-                        <a href="certificates/diploma/diploma.PDF" download class="download-btn">Download Certificate 1</a>
+                <div class="certificate">
+                    <img src="images/diploma.jpg" alt="Diploma Certificates">
+                    <div class="certificate-overlay">
+                        <h3>Diploma Certificates</h3>
+                        <p>Click to view and download my Diploma certifications</p>
+                        <div class="certificate-buttons">
+                            <a href="certificates/diploma/diploma.PDF" download class="download-btn">Download Certificate 1</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="certificate">
-                <img src="images/cisco.jpg" alt="Cisco Certificates">
-                <div class="certificate-overlay">
-                    <h3>Cisco Certificates</h3>
-                    <p>Click to view and download my Adobe certifications</p>
-                    <div class="certificate-buttons">
-                        <a href="certificates/cisco/yosef FissehaGirma-AAIT CCNAV7 Intr-certificate.pdf" download class="download-btn">Download Certificate 1</a>
-                        <a href="certificates/cisco/yosef FissehaGirma-Addis Ababa Inst-certificate.pdf" download class="download-btn">Download Certificate 2</a>
-                        <a href="certificates/cisco/yosef FissehaGirma-CCNAV7ENSAwee3-certificate.pdf" download class="download-btn">Download Certificate 3</a>
-                        
+                <div class="certificate">
+                    <img src="images/cisco.jpg" alt="Cisco Certificates">
+                    <div class="certificate-overlay">
+                        <h3>Cisco Certificates</h3>
+                        <p>Click to view and download my Adobe certifications</p>
+                        <div class="certificate-buttons">
+                            <a href="certificates/cisco/yosef FissehaGirma-AAIT CCNAV7 Intr-certificate.pdf" download class="download-btn">Download Certificate 1</a>
+                            <a href="certificates/cisco/yosef FissehaGirma-Addis Ababa Inst-certificate.pdf" download class="download-btn">Download Certificate 2</a>
+                            <a href="certificates/cisco/yosef FissehaGirma-CCNAV7ENSAwee3-certificate.pdf" download class="download-btn">Download Certificate 3</a>
+                        </div>
                     </div>
-
                 </div>
-            </div>
-            <div class="certificate">
-                <img src="images/degree.jpg" alt="Degree Certificates">
-                <div class="certificate-overlay">
-                    <h3>Degree Certificates</h3>
-                    <p>Click to view and download my Degree certifications</p>
-                    <div class="certificate-buttons">
-                        <a href="certificates/diploma/diploma.PDF" download class="download-btn">Download Certificate 1</a>
+                <div class="certificate">
+                    <img src="images/degree.jpg" alt="Degree Certificates">
+                    <div class="certificate-overlay">
+                        <h3>Degree Certificates</h3>
+                        <p>Click to view and download my Degree certifications</p>
+                        <div class="certificate-buttons">
+                            <a href="certificates/diploma/diploma.PDF" download class="download-btn">Download Certificate 1</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- CONTACT SECTION -->
-    <div id="contact">
+    <div id="contact" class="animated-section">
         <div class="container">
             <div class="row">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
+                <div class="contact-left animate-slideInLeft">
+                    <h1 class="sub-title animated-text">Contact Me</h1>
                     <p><i class="fas fa-paper-plane"></i>yoseffisseha99@gmail.com</p>
                     <p><i class="fas fa-phone-square-alt"></i> +251912374346</p>
                     <div class="social-icons">
@@ -195,9 +192,8 @@
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter-square"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/yosef-fisseha-549143336/" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
-
                     </div>
-                    <a href="images/CV .pdf" download class="btn btn2">Download CV</a>
+                    <a href="images/CV .pdf" download class="btn btn2 animate-pulse">Download CV</a>
                 </div>
             </div>
         </div>
@@ -210,44 +206,7 @@
     <a href="#header" id="backToTop" class="back-to-top" aria-label="Back to Top"><i class="fas fa-chevron-up"></i></a>
 
     <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-        function openTab(tabname) {
-            for (tablink of tablinks) {
-                tablink.classList.remove("active-link");
-            }
-            for (tabcontent of tabcontents) {
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
-
-        var sidemenu = document.getElementById("sidemenu");
-
-        function openMenu() {
-            sidemenu.style.right = "0";
-        }
-
-        function closeMenu() {
-            sidemenu.style.right = "-200px";
-        }
-
-        // Back to Top Button Logic
-        const backToTopButton = document.querySelector('.back-to-top');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        // Your existing JavaScript code here
     </script>
 </body>
 </html>

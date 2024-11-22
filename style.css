@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
@@ -12,6 +12,88 @@ html {
 body {
     background: #080808;
     color: #fff;
+    font-weight: 400;
+    perspective: 1000px;
+}
+
+.container {
+    padding: 10px 10%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+}
+
+.rotating {
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    transform: translateY(-5px);
+}
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.header-text h1 {
+    font-size: 60px;
+    margin-top: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 4s steps(44) 1s 1 normal both;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 #header {
@@ -40,68 +122,7 @@ body {
     z-index: 2;
 }
 
-.container {
-    padding: 10px 10%;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.logo {
-    width: 140px;
-}
-
-nav ul li {
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    position: relative;
-}
-
-nav ul li a::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: #ff004f;
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    transition: 0.5s;
-}
-
-nav ul li a:hover::after {
-    width: 100%;
-}
-
-nav .fas {
-    display: none;
-}
-
-.header-text {
-    margin-top: 20%;
-    font-size: 30px;
-}
-
-.header-text h1 {
-    font-size: 60px;
-    margin-top: 20px;
-}
-
-.header-text h1 span {
-    color: #ff004f;
-}
-
-/* ----------about---------- */
+/* About section */
 #about {
     padding: 80px 0;
     color: #ababab;
@@ -120,10 +141,22 @@ nav .fas {
 .about-col-1 img {
     width: 100%;
     border-radius: 15px;
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 .about-col-2 {
     flex-basis: 60%;
+    animation: slideInFromRight 1s ease-out;
 }
 
 .sub-title {
@@ -143,6 +176,7 @@ nav .fas {
     font-weight: 500;
     cursor: pointer;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .tab-links::after {
@@ -158,6 +192,10 @@ nav .fas {
 
 .tab-links.active-link::after {
     width: 50%;
+}
+
+.tab-links:hover {
+    transform: scale(1.1);
 }
 
 .tab-contents ul li {
@@ -176,9 +214,10 @@ nav .fas {
 
 .tab-contents.active-tab {
     display: block;
+    animation: fadeIn 0.5s ease;
 }
 
-/* ----------services---------- */
+/* Services section */
 #services {
     padding: 30px 0;
 }
@@ -197,6 +236,12 @@ nav .fas {
     font-weight: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
+    animation: fadeIn 1s ease-out;
+}
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
 }
 
 .services-list div i {
@@ -216,14 +261,14 @@ nav .fas {
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+    transition: color 0.3s ease;
 }
 
-.services-list div:hover {
-    background: #ff004f;
-    transform: translateY(-10px);
+.services-list div:hover a {
+    color: #ff004f;
 }
 
-/* ----------portfolio---------- */
+/* Portfolio section */
 #portfolio {
     padding: 50px 0;
 }
@@ -239,6 +284,7 @@ nav .fas {
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    animation: slideInFromBottom 1s ease-out;
 }
 
 .work img {
@@ -294,7 +340,7 @@ nav .fas {
 }
 
 .btn {
-    display: block;
+    display: inline-block;
     margin: 50px auto;
     width: fit-content;
     border: 1px solid #ff004f;
@@ -302,14 +348,15 @@ nav .fas {
     border-radius: 6px;
     text-decoration: none;
     color: #fff;
-    transition: background 0.5s;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     background: #ff004f;
+    transform: translateY(-5px);
 }
 
-/* ----------certificates---------- */
+/* Certificates section */
 #certificates {
     padding: 50px 0;
     background: #000000;
@@ -361,7 +408,7 @@ nav .fas {
 }
 
 .certificate:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) rotateY(10deg);
 }
 
 .certificate-overlay h3 {
@@ -388,20 +435,22 @@ nav .fas {
     border-radius: 5px;
     text-decoration: none;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .download-btn:hover {
     background-color: #e0004d;
+    transform: translateY(-3px);
 }
 
-/* ----------contact---------- */
+/* Contact section */
 #contact {
     padding: 50px 0;
 }
 
 .contact-left {
     flex-basis: 35%;
+    animation: slideInFromLeft 1s ease-out;
 }
 
 .contact-right {
@@ -428,7 +477,7 @@ nav .fas {
     margin-right: 15px;
     color: #ababab;
     display: inline-block;
-    transition: transform 0.5s;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -499,33 +548,31 @@ form .btn2 {
 
 .back-to-top:hover {
     background-color: #d4003f;
+    transform: translateY(-5px);
 }
 
-/* Responsive styles */
-@media only screen and (max-width: 768px) {
+/* CSS for small screens */
+nav .fas {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
     #header {
-        background-attachment: scroll;
+        background-image: url(images/phone-background.png);
     }
-
-    .container {
-        padding: 10px 5%;
-    }
-
     .header-text {
-        margin-top: 50%;
-        font-size: 20px;
+        margin-top: 100%;
+        font-size: 16px;
     }
-
     .header-text h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
-
-    .logo {
-        width: 100px;
+    nav .fas {
+        display: block;
+        font-size: 25px;
     }
-
     nav ul {
-        background: rgba(255, 0, 79, 0.9);
+        background: #ff004f;
         position: fixed;
         top: 0;
         right: -200px;
@@ -535,152 +582,82 @@ form .btn2 {
         z-index: 2;
         transition: right 0.5s;
     }
-
     nav ul li {
         display: block;
         margin: 25px;
     }
-
-    nav .fas {
-        display: block;
-        font-size: 25px;
-    }
-
     nav ul .fas {
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer;
     }
-
     .sub-title {
         font-size: 40px;
     }
-
     .about-col-1, .about-col-2 {
         flex-basis: 100%;
     }
-
     .about-col-1 {
         margin-bottom: 30px;
     }
-
     .about-col-2 {
         font-size: 14px;
     }
-
     .tab-links {
-        
         font-size: 16px;
         margin-right: 20px;
     }
-
     .contact-left, .contact-right {
         flex-basis: 100%;
     }
-}
-
-@media only screen and (max-width: 480px) {
-    .header-text {
-        margin-top: 70%;
-        font-size: 16px;
-    }
-
-    .header-text h1 {
-        font-size: 30px;
-    }
-
-    .sub-title {
-        font-size: 30px;
-    }
-
-    .work-list, .services-list, .certificate-list {
-        grid-template-columns: 1fr;
-    }
-
-    .certificate img {
-        width: 100%;
-    }
-
-    .layer {
-        padding: 0 20px;
-    }
-
-    .btn {
-        padding: 10px 30px;
+    .copyright {
         font-size: 14px;
     }
-
-    .social-icons a {
-        font-size: 24px;
-        margin-right: 10px;
-    }
-
-    .copyright {
-        font-size: 12px;
-    }
-
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-        line-height: 40px;
-    }
 }
 
-/* Styles for wider screens */
-@media only screen and (min-width: 769px) {
-    .container {
-        max-width: 1140px;
-        margin: 0 auto;
-    }
-
-    .row {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
-    .contact-left, .contact-right {
-        flex-basis: 48%;
-    }
-
-    .social-icons {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .social-icons a {
-        margin-bottom: 10px;
-    }
-
-    .btn.btn2 {
-        display: inline-block;
-        margin-top: 20px;
-    }
-
-    nav ul {
-        position: static;
-        display: flex;
-        background: none;
-        height: auto;
-        width: auto;
-        padding-top: 0;
-    }
-
-    nav ul li {
-        display: inline-block;
-        margin: 10px 20px;
-    }
-
-    nav .fas {
-        display: none;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Extra wide screen adjustments */
-@media only screen and (min-width: 1600px) {
-    .container {
-        max-width: 1400px;
-    }
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInFromBottom {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slideInLeft {
+    animation: slideInFromLeft 1s ease-out;
+}
+
+.animate-slideInRight {
+    animation: slideInFromRight 1s ease-out;
+}
+
+.animate-slideInBottom {
+    animation: slideInFromBottom 1s ease-out;
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
 }
