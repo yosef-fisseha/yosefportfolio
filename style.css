@@ -99,7 +99,23 @@ nav ul li a:hover {
 #header {
     width: 100%;
     height: 100vh;
+    background-image: url(images/OfficeZoom_0002.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
+    
+}
+
+#header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 #header .container {
@@ -541,9 +557,10 @@ nav .fas {
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     #header {
-        height: 100vh;
+        background-image: url(images/phone-background.png);
+        background-attachment: scroll;
     }
     .header-text {
         margin-top: 100%;
@@ -601,6 +618,13 @@ nav .fas {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #header {
+        background-attachment: scroll;
+        background-position: top center;
+    }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -631,20 +655,18 @@ nav .fas {
     animation: fadeIn 1s ease-out;
 }
 
-.animate-slide
--in-left {
+.animate-slideInLeft {
     animation: slideInFromLeft 1s ease-out;
 }
 
-.animate-slide-in-right {
+.animate-slideInRight {
     animation: slideInFromRight 1s ease-out;
 }
 
-.animate-slide-in-bottom {
+.animate-slideInBottom {
     animation: slideInFromBottom 1s ease-out;
 }
 
 .animate-pulse {
     animation: pulse 2s infinite;
 }
-
